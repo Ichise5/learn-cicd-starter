@@ -1,7 +1,6 @@
 package auth_test
 
 import (
-	"fmt"
 	"net/http"
 	"testing"
 
@@ -38,8 +37,8 @@ func TestGetAPIKey(t *testing.T) {
 				t.Fatal("GetAPIKey() succeeded unexpectedly")
 			}
 			// TODO: update the condition below to compare got with tt.want.
-			if got == tt.want {
-				fmt.Printf("GetAPIKey() = %v, want %v", got, tt.want)
+			if got != tt.want {
+				t.Errorf("GetAPIKey() = %v, want %v", got, tt.want)
 			}
 		})
 	}
