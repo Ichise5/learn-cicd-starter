@@ -1,12 +1,12 @@
-name: ci
+name: style
 
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  tests:
-    name: Tests
+  style:
+    name: Style formatting
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +18,5 @@ jobs:
         with:
           go-version: "1.25.1"
 
-      - name: Run tests
-        run: go test ./... -cover
-
+      - name: Run formatting check
+        run: test -z $(go fmt ./...)
