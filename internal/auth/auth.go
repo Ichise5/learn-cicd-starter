@@ -2,7 +2,6 @@ package auth
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 	"strings"
 )
@@ -19,6 +18,10 @@ func GetAPIKey(headers http.Header) (string, error) {
 	if len(splitAuth) < 2 || splitAuth[0] != "ApiKey" {
 		return "", errors.New("malformed authorization header")
 	}
-	fmt.Println(splitAuth[0])
 	return splitAuth[1], nil
+}
+
+func unused() {
+    // this function does nothing
+    // and is called nowhere
 }
