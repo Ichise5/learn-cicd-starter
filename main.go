@@ -39,7 +39,8 @@ func main() {
 
 	timeout := os.Getenv("READHEADERTIMEOUT")
 	if timeout == "" {
-		log.Fatal("ReadHeaderTimeout environment variable is not set")
+		log.Printf("ReadHeaderTimeout environment variable is not set")
+		timeout = "5"
 	}
 
 	readHeaderTimeout, err := strconv.Atoi(timeout)
